@@ -6,12 +6,12 @@
       "mode": "and",
       "rules": [
         {
-          "domain": null,
-          "domain_suffix": null,
+          "domain": [],
+          "domain_suffix": [],
           "invert": true
         },
         {
-          "ip_cidr": null
+          "ip_cidr": []
         }
       ]
     }
