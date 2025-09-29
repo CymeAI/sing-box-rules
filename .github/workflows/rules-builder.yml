@@ -36,12 +36,12 @@ jobs:
               mode: "and",
               rules: [
                 {
-                  domain: $a[0].rules[0].domain,
-                  domain_suffix: $a[0].rules[0].domain_suffix,
+                  domain: ($a[0].rules[0].domain // []),
+                  domain_suffix: ($a[0].rules[0].domain_suffix // []),
                   invert: true
                 },
                 {
-                  ip_cidr: $b[0].rules[0].ip_cidr
+                  ip_cidr: ($b[0].rules[0].ip_cidr // [])
                 }
               ]
             }]
