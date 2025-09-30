@@ -59,7 +59,7 @@ jobs:
           cd repo
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add geocn-mix.json geocn-mix.srs
+          git add geosite/geocn-mix.json geosite/geocn-mix.srs
           git commit --allow-empty -m "released on ${{ env.BUILDTIME }}"
           git remote add new_origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f -u new_origin main
