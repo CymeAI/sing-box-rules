@@ -43,7 +43,7 @@ jobs:
                 }
               ]
             }]
-          }' > repo/geosite/geocn-mix.json
+          }' > repo/geosite/mix-cn.json
 
       - name: Install sing-box
         run: |
@@ -52,15 +52,15 @@ jobs:
       - name: Rules json to binary
         run: |
           sing-box rule-set compile \
-            --output repo/geosite/geocn-mix.srs \
-            repo/geosite/geocn-mix.json
+            --output repo/geosite/mix-cn.srs \
+            repo/geosite/mix-cn.json
 
       - name: Commit and push changes
         run: |
           cd repo
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add geosite/geocn-mix.json geosite/geocn-mix.srs
+          git add geosite/mix-cn.json geosite/mix-cn.srs
           git commit --allow-empty -m "released on ${{ env.BUILDTIME }}"
           git remote add new_origin "https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
           git push -f -u new_origin main
