@@ -5,12 +5,17 @@
       "domain": [
         "www.apple.com.cn",
         "www.icloud.com.cn",
-        "termius.com"
+        "termius.com",
+        "ui.com",
+        "ui.com.cn",
+        "cn.store.ui.com"
       ],
       "domain_suffix": [
         "apple.com.cn",
         "icloud.com.cn",
-        "termius.com"
+        "termius.com",
+        "ui.com",
+        "ui.com.cn"
       ]
     }
   ]
