@@ -26,6 +26,7 @@ jobs:
 
       - name: Mix rules
         run: |
+          mkdir -p repo/geosite
           jq -n --slurpfile a geolocation-!cn.json --slurpfile b geoip-cn.json '{
             version: 2,
             rules: [{
@@ -42,7 +43,7 @@ jobs:
                 }
               ]
             }]
-          }' > repo/geocn-mix.json
+          }' > repo/geosite/geocn-mix.json
 
       - name: Install sing-box
         run: |
@@ -51,8 +52,8 @@ jobs:
       - name: Rules json to binary
         run: |
           sing-box rule-set compile \
-            --output repo/geocn-mix.srs \
-            repo/geocn-mix.json
+            --output repo/geosite/geocn-mix.srs \
+            repo/geosite/geocn-mix.json
 
       - name: Commit and push changes
         run: |
